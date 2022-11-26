@@ -1,0 +1,87 @@
+.container{
+    top: 0rem;
+    width: 111rem;
+    left: 0rem;
+    height: 63rem;
+    position: absolute;
+}
+.logo{
+    position: absolute;
+  left: 0%;
+  right: -0.11%;
+  top: 0%;
+  bottom: -0.11%;
+  }
+.signup{
+    padding-left: 9rem;
+    padding-top: 0rem;
+    font-size: 2rem;
+    margin-bottom: 2em;
+    font-family: 'Arial Rounded MT Bold';
+    font-style: normal;
+    mix-blend-mode: normal;
+}
+.signup1{
+	width: 50rem;
+    padding-top: 10rem;
+    
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+span{
+    width: 60%;
+    height: 3px;
+    justify-content: left;
+    display: flex;
+    margin: auto;  
+}
+button{
+	width: 33%;
+    height: 55px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: orange;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+img{
+position: absolute;
+right: 3.14%;
+bottom: 31.03%;
+height: 40em;
+top: 18em;
+left: 54em;
+}
+select{
+	width: 63%;
+    height: 43px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+.ng-invalid{
+    color: red;
+}

@@ -1,39 +1,97 @@
-.body{
-    background-color: orange;
-    height: 50rem;
+.body1{
+background: #FBE6D1;
+height: 100%;
+width: 100%;
 }
 
-/* Style the navigation bar */
-.navbar {
-    width: 100%;
-    background-color: #555;
-    overflow: auto;
-  }
-  
-  /* Navbar links */
-  .navbar a {
-    float: right;
-    text-align: center;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Navbar links on mouse-over */
-  .navbar a:hover {
-    background-color: #000;
-  }
-  
-  /* Current/active navbar link */
-  .active {
-    background-color: #04AA6D;
-  }
-  
-  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-    }
-  }
+.logo{
+left: 0%;
+right: -0.11%;
+top: 0%;
+bottom: -0.11%;
+padding: 4em;
+}
+.text{
+position: relative;
+width: 511px;
+height: 258px;
+bottom:50rem;
+left: 65rem;
+font-family: 'Arial Rounded MT Bold';
+font-style: normal;
+font-weight: 400;
+font-size: 94px;
+line-height: 110px;
+text-transform: uppercase;
+
+color: #000000;
+
+mix-blend-mode: normal;
+text-shadow: 4px 0px 0px rgba(78, 75, 75, 0.72);
+}
+#habits{
+width: 511px;
+height: 258px;
+left: calc(50% - 511px/2 + 377.5px);
+top: calc(50% - 1900px/2 - 90px);
+
+font-family: 'Arial Rounded MT Bold';
+font-style: normal;
+font-weight: 400;
+font-size: 76px;
+line-height: 88px;
+text-transform: uppercase;
+
+color: #FE622D;
+}
+.enroll{
+box-sizing: border-box;
+position: absolute;
+width: 250px;
+height: 72px;
+left: 75em;
+top: 58em;
+cursor: pointer;
+font-weight: 400;
+background-color:#FBE6D1;
+
+border: 1px solid #000000;
+border-radius: 43px;
+}
+.cart{
+  position: absolute;
+  left: 80%;
+  right: 5.54%;
+  top: 3.94%;
+  bottom: 40.64%;
+  cursor: pointer;  
+}
+.login{
+position: absolute;
+left: 84%;
+right: 5.54%;
+top: 3.94%;
+bottom: 40.64%;
+cursor: pointer;
+}
+h2{
+font-family: 'Arial Rounded MT Bold';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 34px;
+/* identical to box height */
+text-align: left;
+text-transform: capitalize;
+color:black;
+margin-top:11px;
+}
+.dot{
+  background: #FFA07D;
+  border-radius: 50%;
+  width: 57px;
+  height: 57px;
+  left: 2264px;
+  top: 688px;
+  margin-left: 5em;
+}
