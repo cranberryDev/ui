@@ -17,6 +17,8 @@ import { NgOtpInputModule } from  'ng-otp-input';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AES } from 'crypto-js';
+import { CheckoutPlansComponent } from './checkout-plans/checkout-plans.component';
 
 
 
@@ -25,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    CheckoutPlansComponent
   ],
   imports: [
     BrowserModule,
