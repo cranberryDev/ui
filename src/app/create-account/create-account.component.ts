@@ -7,6 +7,7 @@ import {AbstractControl, FormBuilder,FormControl,Validators,FormGroup } from '@a
 import { environment } from 'src/environments/environment';
 import { NgModel } from '@angular/forms';
 import {Router} from '@angular/router';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-create-account',
@@ -31,16 +32,19 @@ export class CreateAccountComponent implements OnInit {
   'Sherwood College Of Management',
   'Shri Ramswaroop Memorial College of Engineering & Management',
   'Sri Ayodhya Singh Memo. Inter College']
-  courseList:any=['B.Tech','MBA']
+courseList:any=['B.Tech','MBA']
 listCourse:any;
 listCollege: any;
 submitted=false;
-  
+messageError:any;
+encryptMode: boolean;
+conversionOutput: any;
 
 
   constructor(public authService:SocialAuthService, 
     public createAccountUser:CreateAccoutService,
     public formBuilder:FormBuilder,private router:Router) {
+      this.encryptMode=true;
       this.checkoutForm=this.formBuilder.group({
         name:['',Validators.required],
         email:['',[Validators.required,Validators.email]],
@@ -50,9 +54,12 @@ submitted=false;
         course:[''],
         roll_no:['',Validators.required]
       })
+      
      }
 
   ngOnInit():any {
+    console.log(this.checkoutForm,'form');
+    
   }
   get f(): { [key: string]: AbstractControl } {
     return this.checkoutForm.controls;
@@ -60,15 +67,41 @@ submitted=false;
 
 
   onSubmit(){
+  this.messageError=null;
   this.submitted=true;
+  this.conversionOutput=CryptoJS.AES.encrypt(this.checkoutForm.value.password.trim(),this.checkoutForm.value.email.trim()).toString();
+  console.log(this.conversionOutput,'encrypted');
+  this.checkoutForm.value.password=this.conversionOutput
+  console.log(this.checkoutForm.value.password,'encrypted password');
+  
   this.sendData={...this.checkoutForm.value}
   console.log(this.checkoutForm.value,'checkout form');
-  this.createAccountUser.registerUser(this.sendData).subscribe((res)=>{
   
+
+  this.createAccountUser.registerUser(this.sendData).subscribe(
+    (res)=>{
+    console.log(res,'res from backend')
+    if(res.status===201){
+      this.router.navigateByUrl('/')
+    }
+  },(error)=>{
+   if(error.status===500){
+    this.messageError='User already Registered!'
+   } 
   })
+
   this.checkoutForm.reset();
-  this.router.navigateByUrl('/')
+  
 }
+//  performCheck(){
+//   this.checkData=[this.checkoutForm.value.email]
+//   console.log(this.checkData,'data in array format,check whether key pair or just value');
+  
+//   this.createAccountUser.checkDuplicacy(this.checkData).subscribe((res)=>{
+//     console.log(res,'response comin from backend');
+    
+//   })
+//  }
   
 //  fetchDetails(){
 //   this.createAccountUser.getUserDetails().subscribe((formData)=>{

@@ -24,7 +24,7 @@
         <input type="text" name="txt" formControlName="email" placeholder="E-Mail" required="">
         <span *ngIf="checkoutForm.controls['contact'].errors!=null && checkoutForm.controls['contact'].touched">Contact
           is required</span>
-        <input type="text" name="txt" formControlName="contact" placeholder="Contact" required="">
+        <input type="text" name="txt" formControlName="contact" placeholder="Contact" maxlength="10" required="">
         <span
           *ngIf="checkoutForm.controls['password'].errors!=null && checkoutForm.controls['password'].touched">Password
           is required</span>
@@ -41,7 +41,8 @@
           is required</span>
         <input type="text" name="text" formControlName="roll_no" placeholder="Roll No" required="true">
         <br><br>
-        <button type="submit">Create Account</button>
+        <button type="submit" [disabled]="checkoutForm.invalid">Create Account</button>
+        <div class="errorMessage" *ngIf="messageError!=null">{{messageError}}</div>
       </form>
     </div>
     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" alt="">

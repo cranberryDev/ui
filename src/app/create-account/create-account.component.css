@@ -1,9 +1,16 @@
+.body{
+    background:orange;
+    height: 100%;
+    width: 100%;
+}
 .container{
-    top: 0rem;
-    width: 111rem;
-    left: 0rem;
-    height: 63rem;
+    top: 2em;
+    width: 100rem;
+    left: 5rem;
+    height: 58rem;
     position: absolute;
+    border-radius: 50px;
+    box-shadow: none;
 }
 .logo{
     position: absolute;
@@ -14,16 +21,15 @@
   }
 .signup{
     padding-left: 9rem;
-    padding-top: 0rem;
     font-size: 2rem;
-    margin-bottom: 2em;
+    margin-bottom: 0em;
     font-family: 'Arial Rounded MT Bold';
     font-style: normal;
     mix-blend-mode: normal;
 }
 .signup1{
 	width: 50rem;
-    padding-top: 10rem;
+    padding-top: 8rem;
     
 }
 input{
@@ -55,7 +61,7 @@ button{
     background: orange;
     font-size: 2em;
     font-weight: bold;
-    margin-top: 30px;
+    margin-top: 0em;
     outline: none;
     border: none;
     border-radius: 5px;
@@ -69,6 +75,7 @@ bottom: 31.03%;
 height: 40em;
 top: 18em;
 left: 54em;
+width: 62em;
 }
 select{
 	width: 63%;
@@ -85,3 +92,47 @@ select{
 .ng-invalid{
     color: red;
 }
+@media (max-width: 576px){
+    .signup{
+        padding-left: 0;
+        margin-top: 50px;
+    }
+    .signup1{
+        padding: 0;
+        left: 0;
+        justify-content: start;
+        width: 100% !important;
+    }
+    input{
+        margin-left: 0;
+        margin-top: 10px;
+        /* margin-right: 0; */
+        width: 95%;
+    }
+    form{
+        padding-right: 20px;
+        width: 100% !important;
+    }
+    select{
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    .main-img{
+        display: none;
+    }
+    button{
+        margin-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    form{
+        width: 100%;
+    }
+    .container{
+        width: 100%;
+        height: 100%;
+    }
+}   
